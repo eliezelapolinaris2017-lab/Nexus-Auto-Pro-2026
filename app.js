@@ -2,12 +2,12 @@
 
 /* ========== CONFIG FIREBASE ========== */
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_DOMINIO.firebaseapp.com",
-  projectId: "TU_PROJECT_ID",
-  storageBucket: "TU_BUCKET.appspot.com",
-  messagingSenderId: "TU_SENDER_ID",
-  appId: "TU_APP_ID"
+  apiKey: "AIzaSyAouzcePuYPfGBajbqFFotTNNr_gx_XCYQ",
+  authDomain: "nexus-auto-pro-2026.firebaseapp.com",
+  projectId: "nexus-auto-pro-2026",
+  storageBucket: "nexus-auto-pro-2026.firebasestorage.app",
+  messagingSenderId: "308014641424",
+  appId: "1:308014641424:web:5157d1267e280c48eeb595"
 };
 
 firebase.initializeApp(firebaseConfig);
