@@ -1,0 +1,570 @@
+/* ========== PALETA NEXUS AUTO PRO (NEGRO + DORADO CORPORATIVO) ========== */
+:root {
+  --bg: #020617;
+  --bg-alt: #020617;
+  --surface: #020617;
+  --surface-soft: #050815;
+  --surface-strong: #020617;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+
+  --gold: #fbbf24;
+  --gold-strong: #f59e0b;
+  --gold-soft: #facc15;
+
+  --danger: #f97373;
+  --border-subtle: rgba(148,163,184,.25);
+  --border-strong: rgba(15,23,42,.9);
+
+  --shadow-soft: 0 24px 60px rgba(0,0,0,.85);
+  --radius-card: 18px;
+  --radius-pill: 999px;
+}
+
+/* ========== RESET GLOBAL ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, #111827 0, transparent 40%),
+    radial-gradient(circle at bottom right, #020617 0, #020617 55%, #000 100%);
+}
+
+/* ========== LAYOUT GENERAL ========== */
+body {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.view {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.view.visible {
+  display: flex;
+}
+
+/* ========== LOGIN (PANTALLA INICIAL) ========== */
+#loginView {
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 26px 22px 22px;
+  border-radius: 26px;
+  background:
+    linear-gradient(145deg, rgba(15,23,42,.85), rgba(15,23,42,.2)),
+    radial-gradient(circle at top, rgba(250,204,21,.12), transparent 55%);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 0 0 2px rgba(15,23,42,1),
+    0 0 40px rgba(250,204,21,.75);
+}
+
+.login-logo h1 {
+  margin: 14px 0 4px;
+  font-size: 1.45rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.login-logo p {
+  margin: 0;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+.pin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pin-form label {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.pin-form input {
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148,163,184,.45);
+  background: radial-gradient(circle at top, rgba(15,23,42,.9), rgba(15,23,42,.6));
+  color: var(--text);
+  padding: 9px 14px;
+  font-size: .9rem;
+  outline: none;
+}
+
+.pin-form input:focus {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 0 1px rgba(250,204,21,.5);
+}
+
+.pin-hint {
+  margin: 2px 0 0;
+  font-size: .75rem;
+  color: var(--muted);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 12px;
+  color: var(--muted);
+  font-size: .76rem;
+}
+
+.auth-divider span {
+  flex: 1;
+  height: 1px;
+  background: radial-gradient(circle, rgba(148,163,184,.7), transparent);
+}
+
+.login-footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: .76rem;
+  color: var(--muted);
+}
+
+/* ========== BOTONES ========== */
+.btn {
+  border-radius: var(--radius-pill);
+  border: none;
+  padding: 9px 16px;
+  font-size: .86rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+  white-space: nowrap;
+}
+
+.btn.primary {
+  background:
+    radial-gradient(circle at top, var(--gold) 0, var(--gold-strong) 45%, #b45309 100%);
+  color: #111827;
+  box-shadow:
+    0 10px 30px rgba(250,204,21,.38),
+    0 0 0 1px rgba(250,204,21,.4);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 16px 40px rgba(250,204,21,.65),
+    0 0 0 1px rgba(250,204,21,.6);
+}
+
+.btn.outline {
+  background: linear-gradient(120deg, rgba(15,23,42,.95), rgba(15,23,42,.7));
+  border: 1px solid rgba(148,163,184,.55);
+  color: var(--text);
+}
+
+.btn.outline:hover {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 16px rgba(250,204,21,.4);
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: .78rem;
+}
+
+/* ========== APP PRINCIPAL (DESPUÉS DEL LOGIN) ========== */
+#appView {
+  flex-direction: column;
+}
+
+/* HEADER CORPORATIVO */
+.app-header {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background:
+    linear-gradient(120deg, #020617 0, #020617 45%, #000 100%);
+  border-bottom: 1px solid var(--border-strong);
+  box-shadow: 0 18px 45px rgba(0,0,0,.85);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow:
+    0 0 0 2px rgba(15,23,42,1),
+    0 0 26px rgba(250,204,21,.65);
+}
+
+.brand-text h2 {
+  margin: 0;
+  font-size: 1.02rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.brand-text p {
+  margin: 0;
+  font-size: .74rem;
+  color: var(--muted);
+}
+
+/* MENÚ PRINCIPAL */
+.main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.menu-btn {
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  padding: 7px 13px;
+  font-size: .78rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .12s ease, color .12s ease, transform .12s ease, border-color .12s ease;
+}
+
+.menu-btn:hover {
+  color: var(--gold-soft);
+  transform: translateY(-1px);
+}
+
+.menu-btn.active {
+  background:
+    radial-gradient(circle at top, rgba(250,204,21,.22) 0, transparent 65%);
+  color: var(--gold-soft);
+  border-color: rgba(250,204,21,.35);
+}
+
+.menu-btn.danger {
+  color: var(--danger);
+}
+
+/* CONTENIDO PRINCIPAL */
+.app-main {
+  padding: 18px;
+  max-width: 1200px;
+  margin: 0 auto 36px;
+}
+
+/* PANTALLAS */
+.screen {
+  display: none;
+}
+.screen.visible {
+  display: block;
+}
+
+/* TITULOS / SUBTITULOS */
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.18rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 18px 0 4px;
+  font-size: .98rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  margin: 0 0 14px;
+  font-size: .84rem;
+  color: var(--muted);
+}
+
+/* CABECERA DE PANTALLA (TÍTULO + BOTONES) */
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* FORMULARIOS TIPO TARJETA */
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  padding: 16px 16px 14px;
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(circle at top left, rgba(15,23,42,.95), rgba(15,23,42,.55));
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148,163,184,.4);
+  background: radial-gradient(circle at top, rgba(15,23,42,.92), rgba(15,23,42,.7));
+  color: var(--text);
+  padding: 8px 12px;
+  font-size: .86rem;
+  outline: none;
+}
+
+.field textarea {
+  border-radius: 12px;
+  resize: vertical;
+  min-height: 70px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 0 1px rgba(250,204,21,.4);
+}
+
+/* ACCIONES FORMULARIO */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.status-msg {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* TOOLBAR (BUSCADORES, FILTROS, EXPORTAR) */
+.toolbar {
+  margin: 16px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.toolbar input {
+  flex: 1;
+  min-width: 180px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148,163,184,.5);
+  background: radial-gradient(circle at top, rgba(15,23,42,.9), rgba(15,23,42,.7));
+  color: var(--text);
+  padding: 7px 11px;
+  font-size: .84rem;
+  outline: none;
+}
+
+.toolbar input:focus {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 0 1px rgba(250,204,21,.35);
+}
+
+.small-select {
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(148,163,184,.5);
+  background: radial-gradient(circle at top, rgba(15,23,42,.92), rgba(15,23,42,.7));
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: .82rem;
+}
+
+/* TABLAS PROFESIONALES */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+  background:
+    linear-gradient(145deg, rgba(15,23,42,.96), rgba(15,23,42,.72));
+  box-shadow: var(--shadow-soft);
+}
+
+.table-wrap.small {
+  max-height: 260px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .8rem;
+}
+
+thead {
+  background: linear-gradient(90deg, rgba(15,23,42,.95), rgba(15,23,42,.9));
+}
+
+th, td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: .76rem;
+  text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(15,23,42,.82);
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(15,23,42,.88);
+}
+
+tbody tr:hover {
+  background: radial-gradient(circle at left, rgba(250,204,21,.08), rgba(15,23,42,.95));
+}
+
+/* BADGES PARA ESTADOS DE FACTURA, ETC. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: .7rem;
+}
+
+.badge.success {
+  background: rgba(22,163,74,.22);
+  color: #bbf7d0;
+}
+
+.badge.pending {
+  background: rgba(250,204,21,.22);
+  color: #fef3c7;
+}
+
+.badge.danger {
+  background: rgba(239,68,68,.22);
+  color: #fecaca;
+}
+
+/* PLACEHOLDER / MENSAJES VACÍOS */
+.placeholder {
+  font-size: .84rem;
+  color: var(--muted);
+  margin: 10px;
+  font-style: italic;
+}
+
+/* ESPACIADOS UTILES */
+.mt-32 {
+  margin-top: 32px;
+}
+
+/* ========== RESPONSIVE (iPhone / Móvil) ========== */
+@media (max-width: 900px) {
+  .app-header {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: flex-start;
+  }
+
+  .brand-text h2 {
+    font-size: .96rem;
+  }
+
+  .main-menu {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .app-main {
+    padding: 14px 10px 28px;
+  }
+
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== EXTRA: DA SENSACIÓN DE APP MÓVIL EN IPHONE ========== */
+@media (max-width: 480px) {
+  #appView, #loginView {
+    padding-top: 8px;
+  }
+
+  .login-card {
+    padding: 22px 18px 18px;
+  }
+
+  .app-main {
+    padding-inline: 10px;
+  }
+}
